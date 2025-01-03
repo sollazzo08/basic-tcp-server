@@ -32,6 +32,7 @@ func main(){
 					os.Exit(1)
 				}
 				fmt.Println("Client connected")
+				// go routine TODO: update to handle multiple client connections?
 				go processClient(connection)
 			}
 }
