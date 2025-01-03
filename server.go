@@ -46,8 +46,8 @@ func processClient(connection net.Conn){
 		fmt.Println("Erro reading: ", err.Error())
 	}
 	// prints data recieved from client
-	fmt.Println("Recieved: ", string(buffer[mLen]))
+	fmt.Println("Recieved: ", string(buffer[:mLen]))
 	// repond back to client, using place holder variable _
-	_, err = connection.Write([]byte("Thanks! Got your message:" + string(buffer[:mLen])))
+	_, err = connection.Write([]byte("Thanks! Got your message: " + string(buffer[:mLen])))
 	connection.Close()
 }
